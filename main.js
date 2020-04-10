@@ -4,18 +4,18 @@ const DIRECTION = {
   UP: 1,
   LEFT: 2,
   RIGHT: 3,
-  DOWN: 4
+  DOWN: 4,
 };
 
 const KIND = {
   EMPTY: "",
   FOOD: "food",
-  SNAKE: "snake"
+  SNAKE: "snake",
 };
 
 function Pos(x, y) {
   let pos = { x, y };
-  pos.clone = function() {
+  pos.clone = function () {
     return Pos(this.x, this.y);
   };
   return pos;
@@ -138,7 +138,6 @@ function startGame() {
         snake.nextDirection.push(DIRECTION.RIGHT);
         break;
     }
-    // console.log(event);
   }
 
   function endGame() {
@@ -191,7 +190,7 @@ function startGame() {
     gameArea.snake.push(Pos(startX - 1, startY));
     gameArea.snake.push(Pos(startX, startY));
 
-    gameArea.snake.forEach(pos => setCell(pos, KIND.SNAKE));
+    gameArea.snake.forEach((pos) => setCell(pos, KIND.SNAKE));
   }
 
   function createFood() {

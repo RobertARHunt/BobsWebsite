@@ -55,7 +55,6 @@
                 start.on(
                     'pointerup',
                     function (pointer) {
-                        console.log(this);
                         this.scene.start('inPlay');
                     },
                     this);
@@ -163,7 +162,6 @@
                 }
 
                 if (cursors.up.isDown && player.body.touching.down) {
-                    debugger;
                     player.setVelocityY(-450);
                 }
             }
