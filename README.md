@@ -1,3 +1,3 @@
-# BobsWebsite
+# Bob's Website
 
 My first website while I'm learning to code HTML, CSS, JavaScript etc...
