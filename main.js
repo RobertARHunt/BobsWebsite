@@ -21,18 +21,6 @@ function Pos(x, y) {
   return pos;
 }
 
-document.addEventListener("keydown", titleScreenKeyHandler);
-
-function titleScreenKeyHandler(event) {
-  if (event.isComposing || event.repeat || event.keyCode === 229) {
-    return;
-  }
-
-  if (event.key == " ") {
-    if (!gameArea.gameInProgress) startGame();
-  }
-}
-
 function startGame() {
   gameArea.gameInProgress = true;
 
