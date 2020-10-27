@@ -1,0 +1,16 @@
+.title {
+  background-color: orange;
+  padding: 10px;
+  font-size: 45px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.about {
+  color: #fff;
+  background-color: purple;
+  padding: 20px 30px;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+}

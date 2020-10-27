@@ -1,0 +1,15 @@
+a.btn {
+  color: #fff;
+  transition-duration: 2s;
+  text-decoration: none;
+  background-color: green;
+  padding: 20px 30px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 5px;
+}
+
+a.btn:hover {
+  background: orange;
+  transition-duration: 2s;
+}
