@@ -1,4 +1,4 @@
-const gameArea = document.getElementById("gamearea");
+const gameArea = document.getElementById('gamearea');
 
 const DIRECTION = {
   UP: 1,
@@ -8,9 +8,9 @@ const DIRECTION = {
 };
 
 const KIND = {
-  EMPTY: "",
-  FOOD: "food",
-  SNAKE: "snake",
+  EMPTY: '',
+  FOOD: 'food',
+  SNAKE: 'snake',
 };
 
 function Pos(x, y) {
@@ -24,8 +24,8 @@ function Pos(x, y) {
 function startGame() {
   gameArea.gameInProgress = true;
 
-  document.getElementById("titlescreen").classList.remove("active");
-  document.getElementById("gamescreen").classList.add("active");
+  document.getElementById('titlescreen').classList.remove('active');
+  document.getElementById('gamescreen').classList.add('active');
 
   createGrid();
   createSnake();
@@ -35,7 +35,7 @@ function startGame() {
 
   let updateHandler = setInterval(update, 70);
 
-  document.addEventListener("keydown", keyHandler);
+  document.addEventListener('keydown', keyHandler);
 
   function update() {
     updateDirection();
@@ -44,7 +44,7 @@ function startGame() {
 
   function setScore(newScore) {
     gameArea.score = newScore;
-    document.getElementById("score").innerText = newScore;
+    document.getElementById('score').innerText = newScore;
   }
 
   function addScore(value) {
@@ -109,46 +109,46 @@ function startGame() {
     let snake = gameArea.snake;
 
     switch (event.key) {
-      case "ArrowUp":
-      case "w":
+      case 'ArrowUp':
+      case 'w':
         snake.nextDirection.push(DIRECTION.UP);
         break;
-      case "ArrowDown":
-      case "s":
+      case 'ArrowDown':
+      case 's':
         snake.nextDirection.push(DIRECTION.DOWN);
         break;
-      case "ArrowLeft":
-      case "a":
+      case 'ArrowLeft':
+      case 'a':
         snake.nextDirection.push(DIRECTION.LEFT);
         break;
-      case "ArrowRight":
-      case "d":
+      case 'ArrowRight':
+      case 'd':
         snake.nextDirection.push(DIRECTION.RIGHT);
         break;
     }
   }
 
   function endGame() {
-    document.removeEventListener("keydown", keyHandler);
+    document.removeEventListener('keydown', keyHandler);
     clearInterval(updateHandler);
-    alert("You died!");
-    document.getElementById("gamescreen").classList.remove("active");
-    document.getElementById("titlescreen").classList.add("active");
+    alert('You died!');
+    document.getElementById('gamescreen').classList.remove('active');
+    document.getElementById('titlescreen').classList.add('active');
     gameArea.gameInProgress = false;
   }
 
   function createGrid() {
     function addCell(parent, kind, pos) {
-      let cell = document.createElement("div");
-      cell.className = "cell " + kind + " col" + pos.x + " row" + pos.y;
+      let cell = document.createElement('div');
+      cell.className = 'cell ' + kind + ' col' + pos.x + ' row' + pos.y;
       parent.appendChild(cell);
     }
 
     //clear gameArea
-    gameArea.innerHTML = "";
+    gameArea.innerHTML = '';
 
     //get size of 1 cell
-    addCell(gameArea, "snake", Pos(1, 1));
+    addCell(gameArea, 'snake', Pos(1, 1));
     let cellWidth = gameArea.children[0].clientWidth;
     let cellHeight = gameArea.children[0].clientHeight;
 
@@ -157,12 +157,12 @@ function startGame() {
     gameArea.maxCol = Math.floor(gameArea.clientWidth / cellWidth);
 
     //clear gameArea
-    gameArea.innerHTML = "";
+    gameArea.innerHTML = '';
 
     //create game grid
     for (let nRow = 1; nRow <= gameArea.maxRow; nRow++) {
       for (let nCol = 1; nCol <= gameArea.maxCol; nCol++) {
-        addCell(gameArea, "", Pos(nCol, nRow));
+        addCell(gameArea, '', Pos(nCol, nRow));
       }
     }
   }
@@ -196,7 +196,7 @@ function startGame() {
   }
 
   function getCell(pos) {
-    return document.getElementsByClassName("col" + pos.x + " row" + pos.y)[0];
+    return document.getElementsByClassName('col' + pos.x + ' row' + pos.y)[0];
   }
 
   function setCell(pos, kind) {
